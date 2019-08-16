@@ -1,7 +1,8 @@
-#!/bin/sh -euo pipefail
+#!/bin/sh -eu
 
-echo ${STUNNEL_CERT} > /etc/stunnel/x509-server.pem
-echo ${STUNNEL_KEY}  > /etc/stunnel/x509-server-key.pem
+echo "${STUNNEL_CERT}" > /etc/stunnel/x509-server.pem
+echo "${STUNNEL_KEY}"  > /etc/stunnel/x509-server-key.pem
+chmod 600 /etc/stunnel/x509-server-key.pem
 
 cat /etc/stunnel/stunnel-base.conf > /etc/stunnel/stunnel.conf
 echo "${STUNNEL_SERVICES}" >> /etc/stunnel/stunnel.conf

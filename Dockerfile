@@ -10,8 +10,8 @@ FROM alpine:3.10.1
 RUN apk add --update --no-cache \
         stunnel
  
-COPY --from=certs x509-ca.pem x509-server-key.pem x509-server.pem /etc/stunnel/
-COPY --from=certs stunnel.conf /etc/stunnel/stunnel.conf
+COPY --from=certs /certs/x509-server-key.pem /certs/x509-server.pem /etc/stunnel/
+COPY stunnel.conf /etc/stunnel/stunnel.conf
 
 EXPOSE 587
 

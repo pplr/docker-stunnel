@@ -1,4 +1,4 @@
-FROM alpine:3.10.1
+FROM alpine:3.17.3
 
 RUN apk add --update --no-cache \
         stunnel
